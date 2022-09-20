@@ -4,7 +4,7 @@
   "description": "GitHub Action to create a new Container App revision for PR review",
   "main": "lib/main.js",
   "scripts": {
-    "build": "tsc",
+    "build": "ncc build src/main.ts --license LICENSE -o lib",
     "act": "act push -P ubuntu-latest=catthehacker/ubuntu:act-22.04 --env-file .act/.env --secret-file .act/.secrets --verbose",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@types/node": "^13.13.52",
+    "@vercel/ncc": "^0.34.0",
     "debug": "^4.3.4",
     "typescript": "^4.8.3"
   }
